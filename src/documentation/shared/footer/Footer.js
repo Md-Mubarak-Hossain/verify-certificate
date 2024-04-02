@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
 
   const footerTopics = [
+    
     [
       { id: 1, heading: "Company" },
       { id: 2, path: "/", title: "Country list Here Details" },
@@ -48,7 +49,8 @@ const Footer = () => {
         <div className="container px-5 pt-10 mx-auto">
           <div className="flex flex-wrap md:text-left text-center order-first">
             {
-              footerTopics.map(ft => <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+              footerTopics.map(ft => <div key={ft?.id}
+              className="lg:w-1/4 md:w-1/2 w-full px-4">
                 {
                   ft?.map(ht => <h1 key={ht.id}
                     className="text-xl font-medium  tracking-widest">
