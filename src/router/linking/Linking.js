@@ -35,9 +35,9 @@ const Linking = () => {
                     loader:async({params})=>fetch(`https://verify-certificate-server-2024.vercel.app/certificate/${params.id}`)
                 },
                 {
-                    path: "/verified/:id",
+                    path: "/verified",
                     element: <Protect><Verified /></Protect>,
-                    loader:async({params})=>fetch(`https://verify-certificate-server-2024.vercel.app/certificate/${params.id}`)
+                    
 
                 },
                 {

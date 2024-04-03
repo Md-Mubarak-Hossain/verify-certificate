@@ -23,6 +23,7 @@ const UserDashboard = () => {
                         <p>Contact</p>
                         <p>Facebook</p>
                         <p>Github</p>
+                        <p><Link to="/verified">Verified</Link></p>
                     </div>
                     <div className='my-4 w-full pr-5'><span><LogOut /></span></div>
                 </div>
