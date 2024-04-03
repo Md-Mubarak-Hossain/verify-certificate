@@ -6,11 +6,11 @@ const LogOut = () => {
     const{user,logOut}=useContext(AuthContext);
     const signOut=()=>{
         logOut()
-        .then(()=>alert("log out"))
+        .then(()=>alert("successfully logout"))
       }
     return (
         <>
-          {user?.uid?<Link className='btn' onClick={()=>signOut()}>log Out</Link>:<span className='hidden'></span>}  
+          {user?.uid?<Link to="/" className='btn btn-outline w-full' onClick={()=>signOut()}>log Out</Link>:<span className='hidden'></span>}  
         </>
     );
 };

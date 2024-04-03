@@ -3,6 +3,7 @@ import certificate from "../../components/svg/certificate.svg"
 import { useContext } from 'react';
 import { AuthContext } from '../../../context/Context';
 import LogOut from '../../accounts/logout/LogOut';
+import ThreeDot from '../../accounts/threeDot/ThreeDot';
 const Header = () => {
   const {user}=useContext(AuthContext);
   const headerTopics = [
@@ -14,15 +15,13 @@ const Header = () => {
     { id: 3, topic: "About", path: "/" },
     { id: 4, topic: "Blog", path: "/" },
     
-       user?.uid?{ id: 5, topic: "Dashboard", path: "/userDashboard" }:{ id: 6, topic: "Login", path: "/login" },
-      
-       user?.uid?{id:3, class:"hidden"}:
-       { id: 8, topic: "SignUp", path: "/signup" }  
+       user?.uid?{ id: 5, topic: "Dashboard", path: "/userDashboard" }:{ id: 6, class:"hidden"},
+              
   ]
   return (
     <>
-      <header className="bg-base-300 fixed w-full z-20 top-0 min-h-16">
-        <div className="container mx-auto flex flex-wrap px-5 py-3 flex-col md:flex-row items-center">
+      <header className="bg-base-300 fixed w-full z-20 top-0 min-h-16 right-0">
+        <div className="container mx-auto flex flex-wrap pl-5 py-3 flex-col md:flex-row items-center">
           <Link to="/" className="flex  items-center  mb-4 md:mb-0">
             <img src={certificate} alt="logo" 
             className='w-10 h-10'
@@ -35,8 +34,8 @@ const Header = () => {
                 to={`${h.path}`}
                 className={`mr-5 hover:border-b-2 border-gray-300 focus:border-orange-400 focus:border-b-2 ${h?.class}`}>{h.topic}</Link>
             </span>)}
-            {user?.uid?<LogOut/>:<span className='hidden'></span>}
             {user?.uid?<img src={user?.photoURL} className='rounded-full w-10 h-10 bg-white'/>:<span className='hidden'></span>}
+            <ThreeDot/>
           </nav>          
         </div>
       </header>
