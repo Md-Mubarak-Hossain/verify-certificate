@@ -44,7 +44,7 @@ const Footer = () => {
   ]
 
   return (
-    <div>
+    <div className='relative bottom-0 w-full'>
       <footer className="bg-base-200 mt-10">
         <div className="container px-5 pt-10 mx-auto">
           <div className="flex flex-wrap md:text-left text-center order-first">

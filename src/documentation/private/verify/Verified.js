@@ -1,17 +1,20 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 
 const Verified = () => {
+    const certificateData=useLoaderData()
+    console.log(certificateData);
     const verifyForm = [
-        { id: 1, verified:"verified", placeholder: "Enter verify holder name", className: "input input-bordered p-4 my-2", register: "name" },
-        { id: 2, verified:"verified", placeholder: "Enter verify holder roll", className: "input input-bordered p-4 my-2", register: "roll" },
-        { id: 3, verified:"verified", placeholder: "Enter verify holder registration", className: "input input-bordered p-4 my-2", register: "registration" },
-        { id: 4, verified:"verified", placeholder: "Enter verify holder journal", className: "input input-bordered p-4 my-2", register: "journal" },
-        { id: 5, verified:"verified", placeholder: "Enter verify holder firs author name", className: "input input-bordered p-4 my-2", register: "author" },
-        { id: 6, verified:"verified", placeholder: "Enter verify holder session", className: "input input-bordered p-4 my-2", register: "session" },
-        { id: 7, verified:"verified", placeholder: "Enter verify holder university name", className: "input input-bordered p-4 my-2", register: "university" },
-        { id: 8, verified:"verified", placeholder: "Enter verify holder country", className: "input input-bordered p-4 my-2", register: "country" },
-        { id: 9, verified:"verified", placeholder: "Enter verify holder email", className: "input input-bordered p-4 my-2", register: "email" },
-        { id: 10, verified:"verified", placeholder: "Enter verify holder contact no", className: "input input-bordered p-4 my-2", register: "contact" },
+        { id: 1, verified:"verified", placeholder: certificateData?.name, className: "input input-bordered p-4 my-2", register: "name" },
+        { id: 2, verified:"verified", placeholder: certificateData?.roll, className: "input input-bordered p-4 my-2", register: "roll" },
+        { id: 3, verified:"verified", placeholder: certificateData?.registration, className: "input input-bordered p-4 my-2", register: "registration" },
+        { id: 4, verified:"verified", placeholder: certificateData?.journal, className: "input input-bordered p-4 my-2", register: "journal" },
+        { id: 5, verified:"verified", placeholder: certificateData?.author, className: "input input-bordered p-4 my-2", register: "author" },
+        { id: 6, verified:"verified", placeholder: certificateData?.session, className: "input input-bordered p-4 my-2", register: "session" },
+        { id: 7, verified:"verified", placeholder: certificateData?.university, className: "input input-bordered p-4 my-2", register: "university" },
+        { id: 8, verified:"verified", placeholder: certificateData?.country, className: "input input-bordered p-4 my-2", register: "country" },
+        { id: 9, verified:"verified", placeholder: certificateData?.email, className: "input input-bordered p-4 my-2", register: "email" },
+        { id: 10, verified:"verified", placeholder: certificateData?.contact, className: "input input-bordered p-4 my-2", register: "contact" },
     ]
     return (       
             <form

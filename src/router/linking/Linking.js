@@ -8,6 +8,8 @@ import Verified from '../../documentation/private/verify/Verified';
 import Login from '../../documentation/accounts/signin/Login';
 import SignUp from '../../documentation/accounts/signup/SignUp';
 import UserDashboard from '../../documentation/dashboard/userDashboard/UserDashboard';
+import Protect from '../protect/Protect';
+import GetStarted from '../../documentation/home/homeUtilities/GetStarted';
 
 const Linking = () => {
     const router = createBrowserRouter([
@@ -24,13 +26,22 @@ const Linking = () => {
                 },
                 {
                     path: "/verify",
-                    element: <Verify />,
+                    element: <Protect><Verify /></Protect>,
 
                 },
                 {
-                    path: "/verified",
-                    element: <Verified />,
+                    path: "/verify/:id",
+                    element: <Protect><Verify /></Protect>,
+                    loader:async({params})=>fetch(`https://verify-certificate-server-2024.vercel.app/certificate/${params.id}`)
+                },
+                {
+                    path: "/verified/:id",
+                    element: <Protect><Verified /></Protect>,
+                    loader:async({params})=>fetch(`https://verify-certificate-server-2024.vercel.app/certificate/${params.id}`)
 
+                },
+                {
+                    element:<Protect><GetStarted/></Protect>
                 },
 
                 // account

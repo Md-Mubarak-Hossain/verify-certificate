@@ -1,20 +1,27 @@
 import { Link } from 'react-router-dom';
 import certificate from "../../components/svg/certificate.svg"
+import { useContext } from 'react';
+import { AuthContext } from '../../../context/Context';
+import LogOut from '../../accounts/logout/LogOut';
 const Header = () => {
+  const {user}=useContext(AuthContext);
   const headerTopics = [
     { id: 1, topic: "Home", path: "/" },
     { id: 1, topic: "Verify", path: "/verify" },
-    { id: 2, topic: "Certificate", path: "/certificate" },
+    user?.uid?
+    { id: 2, topic: "Certificate", path: "/certificate" }:{id:3, class:"hidden"},
+
     { id: 3, topic: "About", path: "/" },
     { id: 4, topic: "Blog", path: "/" },
-    { id: 5, topic: "Dashboard", path: "/userDashboard" },
-    { id: 5, topic: "Login", path: "/login" },
-    { id: 5, topic: "SignUp", path: "/signup" }
+    
+       user?.uid?{ id: 5, topic: "Dashboard", path: "/userDashboard" }:{ id: 6, topic: "Login", path: "/login" },
+      
+       user?.uid?{id:3, class:"hidden"}:
+       { id: 8, topic: "SignUp", path: "/signup" }  
   ]
-
   return (
     <>
-      <header className="bg-base-300 fixed w-full">
+      <header className="bg-base-300 fixed w-full z-20 top-0 min-h-16">
         <div className="container mx-auto flex flex-wrap px-5 py-3 flex-col md:flex-row items-center">
           <Link to="/" className="flex  items-center  mb-4 md:mb-0">
             <img src={certificate} alt="logo" 
@@ -24,10 +31,12 @@ const Header = () => {
           </Link>
           <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
             {headerTopics.map(h => <span key={h.id}>
-              <Link
+              <Link exact
                 to={`${h.path}`}
-                className="mr-5 hover:">{h.topic}</Link>
+                className={`mr-5 hover:border-b-2 border-gray-300 focus:border-orange-400 focus:border-b-2 ${h?.class}`}>{h.topic}</Link>
             </span>)}
+            {user?.uid?<LogOut/>:<span className='hidden'></span>}
+            {user?.uid?<img src={user?.photoURL} className='rounded-full w-10 h-10 bg-white'/>:<span className='hidden'></span>}
           </nav>          
         </div>
       </header>
