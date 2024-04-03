@@ -43,7 +43,7 @@ const Login = () => {
     return (
         <>
 
-            <div className="w-full flex flex-col justify-center items-center place-items-center  bg-base-300  shadow-md rounded p-4 mb-1 lg:px-8 lg:pt-6 lg:pb-8 lg:mb-4">
+            <div className="w-full flex flex-col justify-center items-center place-items-center  bg-base-300  shadow-md rounded p-4  lg:px-8 lg:pt-6 lg:pb-8">
 
                 <div className='w-full border py-5 px-5 lg:px-10 lg:w-2/5 mx-auto rounded-lg'>                   
                     <form onSubmit={handleSubmit}>
@@ -62,7 +62,7 @@ const Login = () => {
                         </div>
                         <div className="flex flex-col items-center justify-between">
                             <button className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-                                Sign Up
+                                Login
                             </button>
                             <Link to='/signup' className="inline-block align-baseline text-gray-600 text-sm" >
                                 Don't have an account?<span className='text-xs text-blue-700 underline font-bold'>Sign up</span>

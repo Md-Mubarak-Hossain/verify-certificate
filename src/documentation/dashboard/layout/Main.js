@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom';
 const Main = () => {
     return (
         <>
-           <Header/> 
+           <div className='pb-16'><Header/> </div>
            <Outlet/>
            <Footer/>
         </>

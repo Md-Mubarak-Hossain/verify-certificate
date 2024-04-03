@@ -7,7 +7,9 @@ const Header = () => {
     { id: 2, topic: "Certificate", path: "/certificate" },
     { id: 3, topic: "About", path: "/" },
     { id: 4, topic: "Blog", path: "/" },
-    { id: 5, topic: "Profile", path: "/" }
+    { id: 5, topic: "Dashboard", path: "/userDashboard" },
+    { id: 5, topic: "Login", path: "/login" },
+    { id: 5, topic: "SignUp", path: "/signup" }
   ]
 
   return (
@@ -26,12 +28,7 @@ const Header = () => {
                 to={`${h.path}`}
                 className="mr-5 hover:">{h.topic}</Link>
             </span>)}
-          </nav>
-          <button className="inline-flex items-center bg-base-200 border-0 py-1 px-3 focus:outline-none hover: rounded text-base mt-4 md:mt-0">Button
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </button>
+          </nav>          
         </div>
       </header>
     </>

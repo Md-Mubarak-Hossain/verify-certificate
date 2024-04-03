@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import resultImg from '../../../components/images/allResultLogo.png';
-import electionNID from '../../../components/images/nid.png';
-import smuct from '../../../components/images/smuct.png';
-import birth from '../../../components/images/birth.png';
-import ugc from '../../../components/images/ugc.png';
-import passport from '../../../components/images/passport.png';
-import thesis from '../../../components/images/thesis.png';
-import publicUni from '../../../components/images/publicUni.jpeg';
-import privateUni from '../../../components/images/privateUni.jpeg';
-import nu from '../../../components/images/nu.png';
-import surokkha from '../../../components/images/surokkha.png';
+import resultImg from '../../components/images/allResultLogo.png';
+import electionNID from '../../components/images/nid.png';
+import smuct from '../../components/images/smuct.png';
+import birth from '../../components/images/birth.png';
+import ugc from '../../components/images/ugc.png';
+import passport from '../../components/images/passport.png';
+import thesis from '../../components/images/thesis.png';
+import publicUni from '../../components/images/publicUni.jpeg';
+import privateUni from '../../components/images/privateUni.jpeg';
+import nu from '../../components/images/nu.png';
+import surokkha from '../../components/images/surokkha.png';
 import { IoMdHome } from "react-icons/io";
 import NavbarUtility from './NavbarUtility';
 const Navbar = () => {
