@@ -5,6 +5,7 @@ import Footer from '../../shared/footer/Footer';
 import { AuthContext } from '../../../context/Context';
 import LogOut from '../../accounts/logout/LogOut';
 import edit from "../../components/svg/edit.svg";
+import arrow from "../../components/svg/arrow.svg";
 const UserDashboard = () => {
     const { user } = useContext(AuthContext);
 
@@ -23,7 +24,7 @@ const UserDashboard = () => {
                         <p>Contact</p>
                         <p>Facebook</p>
                         <p>Github</p>
-                        <p><Link to="/verified">Verified</Link></p>
+                        <p><Link to="/certificate" className='flex justify-start items-center'>Get Verified Certificate <img src={arrow} alt="" className='h-6 w-5' /></Link></p>
                     </div>
                     <div className='my-4 w-full pr-5'><span><LogOut /></span></div>
                 </div>

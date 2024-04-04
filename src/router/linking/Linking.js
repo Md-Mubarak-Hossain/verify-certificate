@@ -4,12 +4,12 @@ import Main from '../../documentation/dashboard/layout/Main';
 import Home from '../../documentation/home/Home';
 import Error from '../error/Error';
 import Verify from '../../documentation/private/verify/Verify';
-import Verified from '../../documentation/private/verify/Verified';
 import Login from '../../documentation/accounts/signin/Login';
 import SignUp from '../../documentation/accounts/signup/SignUp';
 import UserDashboard from '../../documentation/dashboard/userDashboard/UserDashboard';
 import Protect from '../protect/Protect';
 import GetStarted from '../../documentation/home/homeUtilities/GetStarted';
+import Certificate from '../../documentation/private/certificate/Certificate';
 
 const Linking = () => {
     const router = createBrowserRouter([
@@ -35,8 +35,8 @@ const Linking = () => {
                     loader:async({params})=>fetch(`https://verify-certificate-server-2024.vercel.app/certificate/${params.id}`)
                 },
                 {
-                    path: "/verified",
-                    element: <Protect><Verified /></Protect>,
+                    path: "/certificate",
+                    element: <Protect><Certificate /></Protect>,
                     
 
                 },
