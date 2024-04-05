@@ -47,30 +47,24 @@ const Login = () => {
 
                 <div className='w-full border py-5 px-5 lg:px-10 lg:w-2/5 mx-auto rounded-lg'>                   
                     <form onSubmit={handleSubmit}>
-                        <div className="mb-4">
-                            <label className="block text-sm font-bold mb-1" for="email">
-                                Email
-                            </label>
-                            <input className="rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" name='email' placeholder="email" />
+                    <div className="mb-4">                           
+                            <input className="rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" type="email" name='email' placeholder="email" />
                         </div>
-                        <div className="mb-6">
-                            <label className="block text-sm font-bold mb-1" for="password">
-                                Password
-                            </label>
-                            <input className="rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************" name='password' />
+                    <div className="mb-6">                           
+                            <input className="rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"  type="password" placeholder="Enter your password" name='password' />
                             <p className="text-red-500 text-xs italic">{error}</p>
                         </div>
                         <div className="flex flex-col items-center justify-between">
-                            <button className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                            <button className="btn w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded focus:outline-none focus:shadow-outline">
                                 Login
                             </button>
                             <Link to='/signup' className="inline-block align-baseline text-gray-600 text-sm" >
                                 Don't have an account?<span className='text-xs text-blue-700 underline font-bold'>Sign up</span>
                             </Link>
                         </div>
-                        <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+                        <Link className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" to="/">
                             Forgot Password?
-                        </a>
+                        </Link>
                     </form>
 
                     <hr className='bg-gray-400 mt-5' />

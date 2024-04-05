@@ -2,9 +2,8 @@ import { Link } from 'react-router-dom';
 import certificate from "../../components/svg/certificate.svg"
 import { useContext } from 'react';
 import { AuthContext } from '../../../context/Context';
-import LogOut from '../../accounts/logout/LogOut';
 import ThreeDot from '../../accounts/threeDot/ThreeDot';
-import Ripple from 'react-waves-effect';
+// import Ripple from 'react-waves-effect';
 const Header = () => {
   const { user } = useContext(AuthContext);
   const headerTopics = [
@@ -31,7 +30,7 @@ const Header = () => {
           </Link>
           <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
             {headerTopics.map(h => <span key={h.id}>
-              <Ripple
+              {/* <Ripple
                 color="green"
                 animationDuration={1600}
                 animationEasing="ease-out"
@@ -39,11 +38,11 @@ const Header = () => {
                 onClick={() => {
                   console.log("clicked");
                 }}
-              >
-                <Link exact
+              > */}
+                <Link
                   to={`${h.path}`}
                   className={`mr-5 hover:border-b-2 border-gray-300 focus:border-orange-400 focus:border-b-2 ${h?.class}`}>{h.topic}</Link>
-              </Ripple>
+              {/* </Ripple> */}
 
             </span>)}
             {user?.uid ? <img src={user?.photoURL} className='rounded-full w-10 h-10 bg-white' /> : <span className='hidden'></span>}
